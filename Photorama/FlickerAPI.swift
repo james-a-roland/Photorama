@@ -70,7 +70,8 @@ class FlickerAPI {
     }
     
     //MARK: Private methods.
-    
+    //RECALL: the `class` means its' a static method. #method means it's a named parameter.
+    //i.e. you must specify flickrUrl(method: myMethod...) in a function call.
     private class func flickrUrl(#method: Method, parameters: [String:String]?) -> NSURL? {
         if let components = NSURLComponents(string: baseURLString) {
             var queryItems = [NSURLQueryItem]()
