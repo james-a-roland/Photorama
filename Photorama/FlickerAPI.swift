@@ -46,14 +46,22 @@ class FlickerAPI {
                 
                 if let photos = jsonObject["photos"] as? [String : AnyObject] {
                     if let photosArray = photos["photo"] as? [[String : AnyObject]] {
+                        var finalPhotos = [Photo]()
                         for photoJSON in photosArray {
-                            println("Photo: \(photoJSON)")
+                            if let photo = photoFromJSONObject(photoJSON) {
+                                finalPhotos.append(photo)
+                            }
                         }
+                        
+                        if finalPhotos.count == 0 && photosArray.count > 0 {
+                            //Unable to parse json - unexpected format for photos.
+                            return .Failure(createError("Unexpected photo JSON content"))
+                        }
+                        return .Success(finalPhotos)
                     }
                 }
-                
-                // For now, just return an empty array
-                return .Success([Photo]())
+                //Data isn't nil, but couldn't find the array of photos.
+                return .Failure(createError("Unexpected JSON contents"))
         }
         else {
             println("Error parsing JSON: \(jsonParsingError!)")

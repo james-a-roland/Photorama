@@ -15,24 +15,29 @@ class PhotoStore {
         return NSURLSession(configuration: config)
     }()
     
-    func fetchRecentPhotos() {
+    func fetchRecentPhotos(#completion: ((PhotosResult) -> Void)?) {
         if let url = FlickerAPI.recentPhotosURL() {
             let request = NSURLRequest(URL: url)
             let task = session.dataTaskWithRequest(request, completionHandler: {
                 (data, response, error) -> Void in
+                
+                var result:PhotosResult
                 if let jsonData = data {
-                    if let jsonString = NSString(data: jsonData,
-                        encoding: NSUTF8StringEncoding) {
-                            println("\(jsonString)")
-                    } }
+                    result = FlickerAPI.photosFromJSONData(jsonData)
+                }
                 else if let requestError = error {
                     println("Error fetching recent photos: \(requestError)")
+                    result = .Failure(requestError)
                 }
                 else {
-                    println("Unexpected error with the request")
+                    result = .Failure(createError("Unexpected request response"))
                 }
+                completion?(result)
             })
             task.resume()
+        }
+        else {
+            completion?(.Failure(createError("Error generating URL")))
         }
     }
 }
