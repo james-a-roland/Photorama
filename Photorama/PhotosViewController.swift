@@ -27,11 +27,13 @@ class PhotosViewController: UIViewController {
                 switch photosResult {
                 case let .Success(photos):
                     println("Successfully found \(photos.count) photos")
-                    self.photoDataSource = PhotoDataSource()
+                    self.photoDataSource = PhotoDataSource(photos: photos)
                 case let .Failure(error):
                     println("Error fetching recent photos: \(error)")
                     self.photoDataSource = PhotoDataSource()
                 }
+                self.collectionView.dataSource = self.photoDataSource
+                self.collectionView.reloadSections(NSIndexSet(index: 0))
             }
         }
     }
