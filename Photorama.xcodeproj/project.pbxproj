@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C4CBD651BABCE2A00FD8A0A /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBD641BABCE2A00FD8A0A /* PhotosViewController.swift */; };
 		4CF4A34C1BAB89A0007A821D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4A34B1BAB89A0007A821D /* AppDelegate.swift */; };
-		4CF4A34E1BAB89A0007A821D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4A34D1BAB89A0007A821D /* ViewController.swift */; };
 		4CF4A3511BAB89A0007A821D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF4A34F1BAB89A0007A821D /* Main.storyboard */; };
 		4CF4A3531BAB89A0007A821D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF4A3521BAB89A0007A821D /* Images.xcassets */; };
 		4CF4A3561BAB89A0007A821D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CF4A3541BAB89A0007A821D /* LaunchScreen.xib */; };
@@ -26,10 +26,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C4CBD641BABCE2A00FD8A0A /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		4CF4A3461BAB89A0007A821D /* Photorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF4A34A1BAB89A0007A821D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CF4A34B1BAB89A0007A821D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4CF4A34D1BAB89A0007A821D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CF4A3501BAB89A0007A821D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CF4A3521BAB89A0007A821D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4CF4A3551BAB89A0007A821D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -56,6 +56,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C4CBD611BABCDF600FD8A0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4C4CBD621BABCDFA00FD8A0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CF4A34F1BAB89A0007A821D /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4C4CBD631BABCDFF00FD8A0A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C4CBD641BABCE2A00FD8A0A /* PhotosViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		4CF4A33D1BAB89A0007A821D = {
 			isa = PBXGroup;
 			children = (
@@ -78,8 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				4CF4A34B1BAB89A0007A821D /* AppDelegate.swift */,
-				4CF4A34D1BAB89A0007A821D /* ViewController.swift */,
-				4CF4A34F1BAB89A0007A821D /* Main.storyboard */,
+				4C4CBD611BABCDF600FD8A0A /* Model */,
+				4C4CBD621BABCDFA00FD8A0A /* View */,
+				4C4CBD631BABCDFF00FD8A0A /* Controller */,
 				4CF4A3521BAB89A0007A821D /* Images.xcassets */,
 				4CF4A3541BAB89A0007A821D /* LaunchScreen.xib */,
 				4CF4A3491BAB89A0007A821D /* Supporting Files */,
@@ -212,7 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF4A34E1BAB89A0007A821D /* ViewController.swift in Sources */,
+				4C4CBD651BABCE2A00FD8A0A /* PhotosViewController.swift in Sources */,
 				4CF4A34C1BAB89A0007A821D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +435,7 @@
 				4CF4A3671BAB89A0007A821D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CF4A3681BAB89A0007A821D /* Build configuration list for PBXNativeTarget "PhotoramaTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +444,7 @@
 				4CF4A36A1BAB89A0007A821D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
