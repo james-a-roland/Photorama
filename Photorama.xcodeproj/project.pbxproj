@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C4CBD651BABCE2A00FD8A0A /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBD641BABCE2A00FD8A0A /* PhotosViewController.swift */; };
 		4C4CBD671BABD1D700FD8A0A /* FlickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBD661BABD1D700FD8A0A /* FlickerAPI.swift */; };
+		4C4CBD691BABD61700FD8A0A /* PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBD681BABD61700FD8A0A /* PhotoStore.swift */; };
 		4CF4A34C1BAB89A0007A821D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4A34B1BAB89A0007A821D /* AppDelegate.swift */; };
 		4CF4A3511BAB89A0007A821D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF4A34F1BAB89A0007A821D /* Main.storyboard */; };
 		4CF4A3531BAB89A0007A821D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF4A3521BAB89A0007A821D /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		4C4CBD641BABCE2A00FD8A0A /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		4C4CBD661BABD1D700FD8A0A /* FlickerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickerAPI.swift; sourceTree = "<group>"; };
+		4C4CBD681BABD61700FD8A0A /* PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
 		4CF4A3461BAB89A0007A821D /* Photorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF4A34A1BAB89A0007A821D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CF4A34B1BAB89A0007A821D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				4C4CBD661BABD1D700FD8A0A /* FlickerAPI.swift */,
+				4C4CBD681BABD61700FD8A0A /* PhotoStore.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				4C4CBD651BABCE2A00FD8A0A /* PhotosViewController.swift in Sources */,
 				4CF4A34C1BAB89A0007A821D /* AppDelegate.swift in Sources */,
+				4C4CBD691BABD61700FD8A0A /* PhotoStore.swift in Sources */,
 				4C4CBD671BABD1D700FD8A0A /* FlickerAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
