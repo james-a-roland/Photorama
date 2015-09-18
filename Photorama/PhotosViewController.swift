@@ -21,6 +21,16 @@ class PhotosViewController: UIViewController {
             switch photosResult {
             case let .Success(photos):
                 println("Successfully found \(photos.count) recent photos")
+                if let firstPhoto = photos.first {
+                    self.store.fetchImageForPhoto(firstPhoto, completion: { (imageResult) -> Void in
+                        switch imageResult {
+                        case let .Success(image):
+                            self.imageView.image = image
+                        case let .Failure(error):
+                            println("Error downloading image: \(error)")
+                        }
+                    })
+                }
             case let .Failure(error):
                 println("Error fetching recent photos: \(error)")
             }
