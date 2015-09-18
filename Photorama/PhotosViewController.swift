@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController {
+class PhotosViewController: UIViewController, UICollectionViewDelegate  {
     
     @IBOutlet weak var collectionView : UICollectionView!
     
@@ -19,6 +19,7 @@ class PhotosViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = photoDataSource
+        collectionView.delegate = self
         
         store.fetchRecentPhotos() {
             (photosResult) -> Void in
@@ -38,4 +39,20 @@ class PhotosViewController: UIViewController {
         }
     }
     
+    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        let photo = photoDataSource.photos[indexPath.row]
+        store.fetchImageForPhoto(photo, completion: { (ImageResult) -> Void in
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                //Get the most recent index path, as it may have changed.
+                let photoIndex = find(self.photoDataSource.photos, photo)!
+                let photoIndexPath = NSIndexPath(forRow: photoIndex, inSection: 0)
+                
+                let visibleIndexPaths = self.collectionView.indexPathsForVisibleItems() as! [NSIndexPath]
+                if (find(visibleIndexPaths, photoIndexPath) != nil) {
+                    let cell = self.collectionView.cellForItemAtIndexPath(photoIndexPath) as! PhotoCollectionViewCell
+                    cell.updateWithImage(photo.image)
+                }
+            })
+        })
+    }
 }

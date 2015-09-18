@@ -48,6 +48,12 @@ class PhotoStore {
     
     func fetchImageForPhoto(photo: Photo, completion: ((ImageResult) -> Void)?) {
         let photoURL = photo.URL
+        
+        if let image = photo.image {
+            completion?(.Success(image))
+            return
+        }
+        
         let request = NSURLRequest(URL: photoURL)
         let task = session.downloadTaskWithRequest(request, completionHandler: {
             (url, response, error) -> Void in
