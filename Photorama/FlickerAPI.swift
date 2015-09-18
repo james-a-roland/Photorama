@@ -12,6 +12,11 @@ enum Method: String {
     case RecentPhotos = "flickr.photos.getRecent"
 }
 
+enum PhotosResult {
+    case Success([Photo])
+    case Failure(NSError)
+}
+
 private let baseURLString = "https://api.flickr.com/services/rest"
 private let APIKey = "a6d819499131071f158fd740860a5a88"
 
@@ -48,6 +53,29 @@ class FlickerAPI {
     
     class func recentPhotosURL() -> NSURL? {
         return flickrUrl(method: .RecentPhotos, parameters: ["extras": "url_h,date_taken"])
+    }
+    
+    class func photosFromJSONData(data: NSData) -> PhotosResult {
+        var jsonParsingError: NSError?
+        if let jsonObject: AnyObject = NSJSONSerialization.JSONObjectWithData(data,
+            options: nil,
+            error: &jsonParsingError) {
+                
+                if let photos = jsonObject["photos"] as? [String : AnyObject] {
+                    if let photosArray = photos["photo"] as? [[String : AnyObject]] {
+                        for photoJSON in photosArray {
+                            println("Photo: \(photoJSON)")
+                        }
+                    }
+                }
+                
+                // For now, just return an empty array
+                return .Success([Photo]())
+        }
+        else {
+            println("Error parsing JSON: \(jsonParsingError!)")
+            return .Failure(jsonParsingError!)
+        }
     }
     
     

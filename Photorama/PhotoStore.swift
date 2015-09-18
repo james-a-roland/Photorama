@@ -20,14 +20,13 @@ class PhotoStore {
             let request = NSURLRequest(URL: url)
             let task = session.dataTaskWithRequest(request, completionHandler: {
                 (data, response, error) -> Void in
-                
                 if let jsonData = data {
-                    if let jsonString = NSString(data: jsonData, encoding: NSUTF8StringEncoding) {
-                    println("\(jsonString)")
-                    }
-                }
+                    if let jsonString = NSString(data: jsonData,
+                        encoding: NSUTF8StringEncoding) {
+                            println("\(jsonString)")
+                    } }
                 else if let requestError = error {
-                    println ("Error fetching recent photos: \(requestError)")
+                    println("Error fetching recent photos: \(requestError)")
                 }
                 else {
                     println("Unexpected error with the request")
