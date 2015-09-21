@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vgh-rb-t7t">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Photorama-->
@@ -46,6 +47,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="YA8-Zv-3kh" id="p3Q-cc-fwq"/>
                                             <outlet property="spinner" destination="MTA-9B-YF2" id="ugy-aw-6pd"/>
+                                            <segue destination="xiY-xY-t45" kind="show" identifier="showPhoto" id="t7N-KH-boU"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -61,7 +63,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085.5" y="447.5"/>
+            <point key="canvasLocation" x="915.5" y="446.5"/>
+        </scene>
+        <!--Photo Info View Controller-->
+        <scene sceneID="Vtu-L7-Bi3">
+            <objects>
+                <viewController id="xiY-xY-t45" customClass="PhotoInfoViewController" customModule="Photorama" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Drl-gP-HLP"/>
+                        <viewControllerLayoutGuide type="bottom" id="sgc-xi-yMV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mzx-08-nPF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tuV-js-R2Z">
+                                <rect key="frame" x="32" y="85" width="310" height="497"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="i0V-ea-tqQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="tuV-js-R2Z" secondAttribute="centerY" id="3cm-pC-WAw"/>
+                            <constraint firstItem="tuV-js-R2Z" firstAttribute="top" secondItem="Drl-gP-HLP" secondAttribute="bottom" constant="21" id="Cil-Bi-qD7"/>
+                            <constraint firstItem="tuV-js-R2Z" firstAttribute="leading" secondItem="mzx-08-nPF" secondAttribute="leadingMargin" constant="16" id="kOa-90-V0n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="tuV-js-R2Z" id="gxy-mU-XE9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V6o-RG-7G9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1429.5" y="446.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nay-0A-ObV">

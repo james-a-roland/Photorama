@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C3369971BB0588E00CA330B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3369961BB0588E00CA330B /* PhotoCollectionViewCell.swift */; };
+		4C3369991BB05E5200CA330B /* PhotoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3369981BB05E5200CA330B /* PhotoInfoViewController.swift */; };
 		4C4CBD651BABCE2A00FD8A0A /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBD641BABCE2A00FD8A0A /* PhotosViewController.swift */; };
 		4C4CBD671BABD1D700FD8A0A /* FlickerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBD661BABD1D700FD8A0A /* FlickerAPI.swift */; };
 		4C4CBD691BABD61700FD8A0A /* PhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBD681BABD61700FD8A0A /* PhotoStore.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		4C3369961BB0588E00CA330B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		4C3369981BB05E5200CA330B /* PhotoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfoViewController.swift; sourceTree = "<group>"; };
 		4C4CBD641BABCE2A00FD8A0A /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		4C4CBD661BABD1D700FD8A0A /* FlickerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickerAPI.swift; sourceTree = "<group>"; };
 		4C4CBD681BABD61700FD8A0A /* PhotoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStore.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		4C4CBD621BABCDFA00FD8A0A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4C3369981BB05E5200CA330B /* PhotoInfoViewController.swift */,
 				4C3369961BB0588E00CA330B /* PhotoCollectionViewCell.swift */,
 				4CF4A34F1BAB89A0007A821D /* Main.storyboard */,
 			);
@@ -256,6 +259,7 @@
 				4C4CBD691BABD61700FD8A0A /* PhotoStore.swift in Sources */,
 				4CEC9D121BAC7E5600C5039C /* PhotoDataSource.swift in Sources */,
 				4C3369971BB0588E00CA330B /* PhotoCollectionViewCell.swift in Sources */,
+				4C3369991BB05E5200CA330B /* PhotoInfoViewController.swift in Sources */,
 				4C4CBD671BABD1D700FD8A0A /* FlickerAPI.swift in Sources */,
 				4C4CBD6B1BABD95700FD8A0A /* Photo.swift in Sources */,
 			);
